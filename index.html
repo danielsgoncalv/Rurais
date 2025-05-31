@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Desenvolvimento Sustentável em Áreas Urbanas e Rurais</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+  body {
+    margin: 0;
+    background-color: #d4edda; /* light green */
+    color: #155724; /* dark green */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  header {
+    background-color: #c3e6cb;
+    padding: 40px 20px 30px;
+    text-align: center;
+  }
+  header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4.8rem;
+    margin: 0;
+    letter-spacing: 2px;
+  }
+  main {
+    max-width: 900px;
+    margin: 30px auto 60px;
+    padding: 0 20px;
+  }
+  section.topics {
+    margin-bottom: 40px;
+  }
+  section.topics h2 {
+    font-size: 2rem;
+    border-bottom: 3px solid #28a745;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  ul {
+    list-style-type: disc;
+    padding-left: 25px;
+    line-height: 1.8;
+    font-size: 1.25rem;
+  }
+  ul li + li {
+    margin-top: 14px;
+  }
+  .images {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .images img {
+    cursor: pointer;
+    border-radius: 12px;
+    max-width: 280px;
+    box-shadow: 0 5px 12px rgba(21, 87, 36, 0.6);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 3px solid transparent;
+  }
+  .images img:hover, .images img:focus {
+    outline: none;
+    transform: scale(1.07);
+    box-shadow: 0 6px 15px rgba(21, 87, 36, 0.85);
+    border-color: #28a745;
+  }
+  #curiosity {
+    margin-top: 25px;
+    font-style: italic;
+    font-size: 1.3rem;
+    text-align: center;
+    color: #19692c;
+    min-height: 3.5em;
+  }
+  footer {
+    background-color: #c3e6cb;
+    padding: 22px 0;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-top: 2px solid #28a745;
+    user-select: none;
+  }
+  footer a {
+    color: #155724;
+    text-decoration: none;
+  }
+  footer a:hover,
+  footer a:focus {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Desenvolvimento Sustentável<br />Áreas Urbanas e Rurais</h1>
+</header>
+<main>
+  <section class="topics" aria-label="Tópicos importantes sobre desenvolvimento sustentável">
+    <h2>Tópicos Importantes</h2>
+    <ul>
+      <li><strong>Gestão eficiente de recursos naturais:</strong> uso responsável da água, solo e energia.</li>
+      <li><strong>Incorporação de energias renováveis:</strong> incentivando painéis solares, energia eólica e biomassa.</li>
+      <li><strong>Urbanização planejada:</strong> criando cidades verdes com espaços públicos sustentáveis e transporte eco-friendly.</li>
+      <li><strong>Agricultura sustentável:</strong> práticas que protegem o solo, biodiversidade e promovem sistemas agroflorestais.</li>
+      <li><strong>Redução de poluição:</strong> diminuição das emissões de gases, resíduos sólidos e tratamento de águas residuais.</li>
+      <li><strong>Educação ambiental:</strong> conscientizando comunidades urbanas e rurais para a preservação futura.</li>
+      <li><strong>Inovação tecnológica:</strong> aplicando tecnologias verdes para proteger o meio ambiente e melhorar a qualidade de vida.</li>
+    </ul>
+  </section>
+  <section class="images" aria-label="Imagens sobre desenvolvimento sustentável">
+    <img tabindex="0" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Painéis solares em área urbana" data-curiosity="A energia solar pode reduzir em até 70% o custo de eletricidade residencial." />
+    <img tabindex="0" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=400&q=80" alt="Campo arborizado e agricultura sustentável" data-curiosity="Agricultura sustentável mantém a saúde do solo, evitando erosão e perda de nutrientes." />
+    <img tabindex="0" src="https://images.unsplash.com/photo-1527826883308-f37bd2344a49?auto=format&fit=crop&w=400&q=80" alt="Cidade verde com transporte eco-friendly" data-curiosity="Cidades verdes com transporte público eficaz diminuem a emissão de gases do efeito estufa." />
+  </section>
+  <p id="curiosity" aria-live="polite"></p>
+</main>
+<footer>
+  Contato: <a href="tel:+41988302676" aria-label="Telefone para contato">-41988302676-</a>
+</footer>
+<script>
+  const images = document.querySelectorAll('.images img');
+  const curiosityEl = document.getElementById('curiosity');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      curiosityEl.textContent = img.getAttribute('data-curiosity');
+    });
+    img.addEventListener('keypress', (e) => {
+      if(e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        img.click();
+      }
+    });
+  });
+</script>
+</body>
+</html>
+
